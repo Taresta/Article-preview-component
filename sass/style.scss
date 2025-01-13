@@ -1,0 +1,120 @@
+// Color Variables
+$very-dark-grayish-blue: hsl(217, 19%, 35%);
+$desaturated-dark-blue: hsl(214, 17%, 51%);
+$grayish-blue: hsl(212, 23%, 69%);
+$light-grayish-blue: hsl(210, 46%, 95%);
+
+// Typography Variables
+$font-size: 13px;
+$font-family: "Manrope", serif;
+$primary-font-weight: 700;
+$secondary-font-weight: 500;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+ font-family: $font-family;
+ font-size: $font-size;
+ font-weight: $secondary-font-weight;
+ color: $desaturated-dark-blue;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ font-size: clamp(10px, 10px + 0.3vw, 13px);
+ background-color: $light-grayish-blue;
+}
+.container {
+    display:flex;
+    flex-direction: column;
+    width: clamp(50%, 80% - 10vw, 80%);
+    height: 75%;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        flex-basis: 50%;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .content-container {
+        flex-basis: 35%;
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+         h3 {
+            color: $very-dark-grayish-blue;
+         }
+    }
+    .footer-container {
+        flex-basis: 15%;
+        padding: 0 2em;
+        display: flex;
+        align-items: center;
+        gap: 1em;
+
+        &.dark {
+            background-color: $very-dark-grayish-blue;
+            color: white;
+        }
+        .avatar-container {
+            display:flex;
+            gap:1em;
+            .avatar {
+                width: 3em;
+                height: 3em;
+                border-radius: 50%;
+            }
+            #name {
+                color: $very-dark-grayish-blue;
+                font-weight: $primary-font-weight;
+            }
+        }
+        .share-container {
+            display:flex;
+            gap: 1em;
+            flex-grow: 1;
+            align-items: end;
+            &.hidden {
+                display: none;
+            }
+            #share-icons {
+                display: flex;
+                gap: 1.5em;
+                align-items: baseline;
+            }
+        }
+        #share {
+            border-radius: 50%;
+            padding: 0.5em;
+            background-color: $light-grayish-blue;
+            margin-left: auto;
+            cursor: pointer;
+        }
+        
+    }
+}
+
+@media (min-width: 768px) {
+    .conatiner {
+        flex-direction: row;
+    }
+}
+
+
+
