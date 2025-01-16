@@ -114,6 +114,16 @@ body {
   fill: hsl(210, 46%, 95%);
 }
 
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
 @media (min-width: 425px) {
   .container {
     margin-top: 1em;
